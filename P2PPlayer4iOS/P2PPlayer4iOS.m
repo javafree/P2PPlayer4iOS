@@ -15,6 +15,11 @@
     AVPlayerItem *_item;
 }
 
++ (BOOL)supportURL:(NSString*)url
+{
+    return [HTTPP2PTask supportURL:url];
+}
+
 + (Class)layerClass
 {
 	return [AVPlayerLayer class];

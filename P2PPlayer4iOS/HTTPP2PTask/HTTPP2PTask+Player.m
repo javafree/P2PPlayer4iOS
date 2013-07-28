@@ -142,4 +142,14 @@ ERROR:
     return nil;
 }
 
++ (BOOL)supportURL:(NSString*)url
+{
+    if ([[url lowercaseString] hasPrefix:@"bdhd://"])
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end

@@ -16,4 +16,6 @@
 
 + (HTTPP2PTask*)task4HTTPUrl:(NSString*)httpUrl;
 
++ (BOOL)supportURL:(NSString*)url;
+
 @end
