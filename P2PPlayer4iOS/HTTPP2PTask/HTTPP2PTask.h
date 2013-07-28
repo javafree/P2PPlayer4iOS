@@ -33,7 +33,7 @@ typedef enum
 
 + (NSString*)key4url:(NSString*)url;
 
-- (id)initWithTask:(task_handle_t)handle p2pUrl:(NSString*)url;
+- (id)initWithTaskWithP2PUrl:(NSString*)url;
 
 - (void)start;
 - (void)stop;

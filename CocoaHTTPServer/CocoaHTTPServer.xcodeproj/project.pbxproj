@@ -47,6 +47,8 @@
 		2346966717A4B180003A3D18 /* HTTPRedirectResponse.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2346961517A4B088003A3D18 /* HTTPRedirectResponse.h */; };
 		2346966817A4B180003A3D18 /* WebSocket.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2346961717A4B088003A3D18 /* WebSocket.h */; };
 		2346966917A4B180003A3D18 /* GCDAsyncSocket.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2346962617A4B088003A3D18 /* GCDAsyncSocket.h */; };
+		239EAB9917A4BEFA000C1B11 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239EAB9817A4BEFA000C1B11 /* Security.framework */; };
+		239EAB9D17A4BF31000C1B11 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239EAB9C17A4BF31000C1B11 /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -134,6 +136,8 @@
 		2346963717A4B088003A3D18 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		2346963817A4B088003A3D18 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		2346963917A4B088003A3D18 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		239EAB9817A4BEFA000C1B11 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		239EAB9C17A4BF31000C1B11 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239EAB9D17A4BF31000C1B11 /* CFNetwork.framework in Frameworks */,
+				239EAB9917A4BEFA000C1B11 /* Security.framework in Frameworks */,
 				234695DE17A4B059003A3D18 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +174,8 @@
 		234695DC17A4B059003A3D18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				239EAB9C17A4BF31000C1B11 /* CFNetwork.framework */,
+				239EAB9817A4BEFA000C1B11 /* Security.framework */,
 				234695DD17A4B059003A3D18 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -491,6 +499,7 @@
 				234695EA17A4B059003A3D18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

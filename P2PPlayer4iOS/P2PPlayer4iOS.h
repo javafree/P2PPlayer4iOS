@@ -10,4 +10,6 @@
 
 @interface P2PPlayer4iOS : UIView
 
+- (BOOL)playP2PUrl:(NSString*)p2pURL;
+
 @end

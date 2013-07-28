@@ -1680,6 +1680,11 @@ static NSMutableArray *recentNonces;
 		
 	//	return [[[HTTPAsyncFileResponse alloc] initWithFilePath:filePath forConnection:self] autorelease];
 	}
+    
+    if ([self respondsToSelector:SEL_RESPONSE_EXT])
+    {
+        return [self performSelector:SEL_RESPONSE_EXT withObject:method withObject:path];
+    }
 	
 	return nil;
 }

@@ -28,31 +28,31 @@ static UInt16 g_port = HTTP_PORT_BASE;
 
 // HTTPP2PTask
 @implementation HTTPP2PTask (Player)
-
-+ (void)initialize
-{
-    [super initialize];
-    
-    g_dictP2PTasks = [[NSMutableDictionary alloc] initWithCapacity:64];
-}
-
 + (HTTPP2PTask*)createTask4P2PUrl:(NSString *)p2pURL delegate:(id<HTTPP2PTaskDelegate>)delegate
 {
+    if (!g_dictP2PTasks)
+    {
+        g_dictP2PTasks = [[NSMutableDictionary alloc] initWithCapacity:64];
+    }
+    VPR(g_dictP2PTasks);
+    
     BOOL ret = YES;
     HTTPP2PTask *task = nil;
     HTTPServer *httpServer = nil;
-    task_handle_t handle = nil;
+    TaskItem *item = nil;
     
-    // start p2p
+    NSString *key = [self key4url:p2pURL];
+    CPR(key);
+    
+    // create the task
+    task = [[HTTPP2PTask alloc] initWithTaskWithP2PUrl:p2pURL];
+    CPR(task);
+    
+    item = [g_dictP2PTasks objectForKey:key];
+    if (item)
     {
-        task_param_t  taskParam = {0};
-        taskParam.url = (char *)[p2pURL UTF8String];
-        taskParam.flag = eTaskParamCacheMemory;
-        
-        int done = p2pservice_task_create(&taskParam, &handle);
-        CBR(done >= 0 && handle);
-        
-        p2pservice_set_playing(handle, true);
+        task = item.task;
+        goto ERROR;
     }
     
     // start http server
@@ -64,33 +64,20 @@ static UInt16 g_port = HTTP_PORT_BASE;
         [httpServer setPort:g_port++];
     }
     
-    // build the HTTPP2PTask for handle
-    CBR(handle && p2pURL && [p2pURL length] > 0);
+    // build the HTTPP2PTask
+    item = [[TaskItem alloc] init];
+    item.task = task;
+    item.httpServer = httpServer;
+    [g_dictP2PTasks setObject:item forKey:key];
+    
+    task.delegate = delegate;
+    [task start];
     
     {
-        NSString *key = [self key4url:p2pURL];
-        CPR(key);
-        
-        task = [g_dictP2PTasks objectForKey:key];
-        if (!task)
-        {
-            task = [[HTTPP2PTask alloc] initWithTask:handle p2pUrl:p2pURL];
-            CPR(task);
-            
-            TaskItem *item = [[TaskItem alloc] init];
-            item.task = task;
-            item.httpServer = httpServer;
-            [g_dictP2PTasks setObject:item forKey:key];
-            
-            task.delegate = delegate;
-            [task start];
-            
-            NSError * error = nil;
-            [httpServer start:&error];
-            CBR(!error);
-        }
+    NSError * error = nil;
+    [httpServer start:&error];
+    CBR(!error);
     }
-    
 ERROR:
     if (!ret)
     {
@@ -100,10 +87,6 @@ ERROR:
         {
             task.delegate = nil;
             [task stop];
-        }
-        else
-        {
-            p2pservice_task_destroy(handle);
         }
     }
     

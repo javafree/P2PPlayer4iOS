@@ -6,6 +6,7 @@
 @class WebSocket;
 @protocol HTTPResponse;
 
+#define SEL_RESPONSE_EXT    @selector(httpResponseExtForMethod:URI:)
 
 #define HTTPConnectionDidDieNotification  @"HTTPConnectionDidDie"
 
