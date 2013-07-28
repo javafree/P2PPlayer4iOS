@@ -13,5 +13,6 @@
 + (BOOL)supportURL:(NSString*)url;
 
 - (BOOL)playP2PUrl:(NSString*)p2pURL;
+- (void)pause;
 
 @end

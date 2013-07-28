@@ -49,6 +49,18 @@
     return YES;
 }
 
+- (void)pause
+{
+    if ([self player].rate > 0)
+    {
+        [[self player] pause];
+    }
+    else
+    {
+        [[self player] play];
+    }
+}
+
 - (void)_hookPlayItem:(AVPlayerItem*)item
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
