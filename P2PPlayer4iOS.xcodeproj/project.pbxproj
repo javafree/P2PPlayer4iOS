@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		2346956417A4AF67003A3D18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2346956317A4AF67003A3D18 /* UIKit.framework */; };
 		2346965917A4B09D003A3D18 /* libCocoaHTTPServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 234695F017A4B05A003A3D18 /* libCocoaHTTPServer.a */; };
+		2346966F17A4B284003A3D18 /* libP2P-device.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2346966C17A4B284003A3D18 /* libP2P-device.a */; };
+		2346967017A4B284003A3D18 /* libP2P-simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2346966D17A4B284003A3D18 /* libP2P-simulator.a */; };
+		2346967B17A4B2DA003A3D18 /* HTTPP2PResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2346967317A4B2DA003A3D18 /* HTTPP2PResponse.m */; };
+		2346967C17A4B2DA003A3D18 /* HTTPP2PTask+Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 2346967617A4B2DA003A3D18 /* HTTPP2PTask+Player.m */; };
+		2346967D17A4B2DA003A3D18 /* HTTPP2PTask+Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 2346967817A4B2DA003A3D18 /* HTTPP2PTask+Response.m */; };
+		2346967E17A4B2DA003A3D18 /* HTTPP2PTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2346967A17A4B2DA003A3D18 /* HTTPP2PTask.m */; };
+		2346968317A4B315003A3D18 /* ehm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2346968217A4B315003A3D18 /* ehm.mm */; };
+		2346968917A4B41F003A3D18 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2346968817A4B41F003A3D18 /* NSData+MD5Digest.m */; };
 		23B59A3B17A4AF060097F132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B59A3A17A4AF060097F132 /* Foundation.framework */; };
 		23B59A4017A4AF060097F132 /* P2PPlayer4iOS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23B59A3F17A4AF060097F132 /* P2PPlayer4iOS.h */; };
 		23B59A4217A4AF060097F132 /* P2PPlayer4iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B59A4117A4AF060097F132 /* P2PPlayer4iOS.m */; };
@@ -47,6 +55,21 @@
 /* Begin PBXFileReference section */
 		2346956317A4AF67003A3D18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		234695EB17A4B059003A3D18 /* CocoaHTTPServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaHTTPServer.xcodeproj; path = CocoaHTTPServer/CocoaHTTPServer.xcodeproj; sourceTree = "<group>"; };
+		2346966C17A4B284003A3D18 /* libP2P-device.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libP2P-device.a"; sourceTree = "<group>"; };
+		2346966D17A4B284003A3D18 /* libP2P-simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libP2P-simulator.a"; sourceTree = "<group>"; };
+		2346966E17A4B284003A3D18 /* p2pservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = p2pservice.h; sourceTree = "<group>"; };
+		2346967217A4B2DA003A3D18 /* HTTPP2PResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPP2PResponse.h; sourceTree = "<group>"; };
+		2346967317A4B2DA003A3D18 /* HTTPP2PResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPP2PResponse.m; sourceTree = "<group>"; };
+		2346967517A4B2DA003A3D18 /* HTTPP2PTask+Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPP2PTask+Player.h"; sourceTree = "<group>"; };
+		2346967617A4B2DA003A3D18 /* HTTPP2PTask+Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPP2PTask+Player.m"; sourceTree = "<group>"; };
+		2346967717A4B2DA003A3D18 /* HTTPP2PTask+Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPP2PTask+Response.h"; sourceTree = "<group>"; };
+		2346967817A4B2DA003A3D18 /* HTTPP2PTask+Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPP2PTask+Response.m"; sourceTree = "<group>"; };
+		2346967917A4B2DA003A3D18 /* HTTPP2PTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPP2PTask.h; sourceTree = "<group>"; };
+		2346967A17A4B2DA003A3D18 /* HTTPP2PTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPP2PTask.m; sourceTree = "<group>"; };
+		2346968117A4B315003A3D18 /* ehm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ehm.h; sourceTree = "<group>"; };
+		2346968217A4B315003A3D18 /* ehm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ehm.mm; sourceTree = "<group>"; };
+		2346968717A4B41F003A3D18 /* NSData+MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5Digest.h"; sourceTree = "<group>"; };
+		2346968817A4B41F003A3D18 /* NSData+MD5Digest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5Digest.m"; sourceTree = "<group>"; };
 		23B59A3717A4AF060097F132 /* libP2PPlayer4iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libP2PPlayer4iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B59A3A17A4AF060097F132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23B59A3E17A4AF060097F132 /* P2PPlayer4iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2PPlayer4iOS-Prefix.pch"; sourceTree = "<group>"; };
@@ -62,6 +85,8 @@
 				2346965917A4B09D003A3D18 /* libCocoaHTTPServer.a in Frameworks */,
 				2346956417A4AF67003A3D18 /* UIKit.framework in Frameworks */,
 				23B59A3B17A4AF060097F132 /* Foundation.framework in Frameworks */,
+				2346966F17A4B284003A3D18 /* libP2P-device.a in Frameworks */,
+				2346967017A4B284003A3D18 /* libP2P-simulator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +99,74 @@
 				234695F017A4B05A003A3D18 /* libCocoaHTTPServer.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2346966A17A4B279003A3D18 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				2346966B17A4B284003A3D18 /* P2P */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		2346966B17A4B284003A3D18 /* P2P */ = {
+			isa = PBXGroup;
+			children = (
+				2346966C17A4B284003A3D18 /* libP2P-device.a */,
+				2346966D17A4B284003A3D18 /* libP2P-simulator.a */,
+				2346966E17A4B284003A3D18 /* p2pservice.h */,
+			);
+			name = P2P;
+			path = Vendor/P2P;
+			sourceTree = SOURCE_ROOT;
+		};
+		2346967117A4B2DA003A3D18 /* HTTPP2PResponse */ = {
+			isa = PBXGroup;
+			children = (
+				2346967217A4B2DA003A3D18 /* HTTPP2PResponse.h */,
+				2346967317A4B2DA003A3D18 /* HTTPP2PResponse.m */,
+			);
+			path = HTTPP2PResponse;
+			sourceTree = "<group>";
+		};
+		2346967417A4B2DA003A3D18 /* HTTPP2PTask */ = {
+			isa = PBXGroup;
+			children = (
+				2346967517A4B2DA003A3D18 /* HTTPP2PTask+Player.h */,
+				2346967617A4B2DA003A3D18 /* HTTPP2PTask+Player.m */,
+				2346967717A4B2DA003A3D18 /* HTTPP2PTask+Response.h */,
+				2346967817A4B2DA003A3D18 /* HTTPP2PTask+Response.m */,
+				2346967917A4B2DA003A3D18 /* HTTPP2PTask.h */,
+				2346967A17A4B2DA003A3D18 /* HTTPP2PTask.m */,
+			);
+			path = HTTPP2PTask;
+			sourceTree = "<group>";
+		};
+		2346967F17A4B315003A3D18 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2346968617A4B41F003A3D18 /* MD5 */,
+				2346968017A4B315003A3D18 /* ehm */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2346968017A4B315003A3D18 /* ehm */ = {
+			isa = PBXGroup;
+			children = (
+				2346968117A4B315003A3D18 /* ehm.h */,
+				2346968217A4B315003A3D18 /* ehm.mm */,
+			);
+			path = ehm;
+			sourceTree = "<group>";
+		};
+		2346968617A4B41F003A3D18 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				2346968717A4B41F003A3D18 /* NSData+MD5Digest.h */,
+				2346968817A4B41F003A3D18 /* NSData+MD5Digest.m */,
+			);
+			path = MD5;
 			sourceTree = "<group>";
 		};
 		23B59A2C17A4AF060097F132 = {
@@ -106,6 +199,10 @@
 		23B59A3C17A4AF060097F132 /* P2PPlayer4iOS */ = {
 			isa = PBXGroup;
 			children = (
+				2346967F17A4B315003A3D18 /* Utils */,
+				2346967117A4B2DA003A3D18 /* HTTPP2PResponse */,
+				2346967417A4B2DA003A3D18 /* HTTPP2PTask */,
+				2346966A17A4B279003A3D18 /* Vendor */,
 				23B59A3F17A4AF060097F132 /* P2PPlayer4iOS.h */,
 				23B59A4117A4AF060097F132 /* P2PPlayer4iOS.m */,
 				23B59A3D17A4AF060097F132 /* Supporting Files */,
@@ -189,6 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				23B59A4217A4AF060097F132 /* P2PPlayer4iOS.m in Sources */,
+				2346967B17A4B2DA003A3D18 /* HTTPP2PResponse.m in Sources */,
+				2346967C17A4B2DA003A3D18 /* HTTPP2PTask+Player.m in Sources */,
+				2346967D17A4B2DA003A3D18 /* HTTPP2PTask+Response.m in Sources */,
+				2346967E17A4B2DA003A3D18 /* HTTPP2PTask.m in Sources */,
+				2346968317A4B315003A3D18 /* ehm.mm in Sources */,
+				2346968917A4B41F003A3D18 /* NSData+MD5Digest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,26 +355,38 @@
 		23B59A4617A4AF060097F132 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
 				DSTROOT = /tmp/P2PPlayer4iOS.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "P2PPlayer4iOS/P2PPlayer4iOS-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/P2P\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/P2PPlayer4iOS/Utils\"";
 			};
 			name = Debug;
 		};
 		23B59A4717A4AF060097F132 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
 				DSTROOT = /tmp/P2PPlayer4iOS.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "P2PPlayer4iOS/P2PPlayer4iOS-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vendor/P2P\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/P2PPlayer4iOS/Utils\"";
 			};
 			name = Release;
 		};
