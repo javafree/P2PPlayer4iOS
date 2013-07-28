@@ -27,6 +27,7 @@
     [super initialize];
     
     p2pservice_init(6, true);
+    p2pservice_set_cache_size(1024 * 1024 * 4);
 }
 
 - (id)initWithTaskWithP2PUrl:(NSString*)url
@@ -104,8 +105,9 @@
 }
 
 - (BOOL)seekTo:(UInt64)offset
-{    
+{
     _offset = offset;
+    NSLog(@"[seekTo] %llu", _offset);
     
     return YES;
 }
@@ -114,6 +116,7 @@
 {
     NSMutableData *data = nil;
     BOOL ret = YES;
+    UInt64 offst = 0;
     
     if (_offset >= [self _fileSize])
     {
@@ -126,14 +129,16 @@
     data = [NSMutableData dataWithLength:length];
     CPR(data);
 
+    offst = _offset;
+    NSLog(@"[readDataOfLength] offset=%llu, length=%u", offst, length);
     while (1)
     {
         char *buf = [data mutableBytes];
-        int read = p2pservice_read(_p2pTask, _offset, buf, length, false);
+        int read = p2pservice_read(_p2pTask, offst, buf, length, false);
         if (read > 0)
         {
             [data setLength:read];
-            _offset += read;
+            _offset = read + offst;
             
             break;
         }
@@ -142,9 +147,12 @@
             sleep(1);
         }
         
+        task_stat_t stat = {0};
+        p2pservice_task_stat(_p2pTask, &stat);
+        
         task_info_t info = {0};
         p2pservice_task_info(_p2pTask, &info);
-        NSLog(@"speed=%d, downloaded=%llu", info.downspeed, info.downloaded);
+        NSLog(@"speed=%d, downloaded=%llu, readpos=%llu, unfinish=%llu, short=%llu, long=%llu, winpos=%llu", info.downspeed, info.downloaded, stat.read_pos, stat.unfinish_pos, stat.short_win, stat.long_win, stat.win_pos);
     }
     
 ERROR:
@@ -206,7 +214,7 @@ ERROR:
     CPRA(cachesPath);
     
     taskParam.url = (char *)[_p2pUrl UTF8String];
-    taskParam.flag = eTaskParamSplitFile;
+    taskParam.flag = eTaskParamCacheToFile;
     taskParam.path = (char*)[cachesPath UTF8String];
     taskParam.filename = (char*)[_md5Url UTF8String];
     
