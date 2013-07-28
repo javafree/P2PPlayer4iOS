@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlaybackViewCore.h"
 
-@interface P2PPlayer4iOS : UIView
+@interface P2PPlayer4iOS : UIView <PlaybackViewCore>
 
 + (BOOL)supportURL:(NSString*)url;
 
