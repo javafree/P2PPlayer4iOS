@@ -13,6 +13,5 @@
 @interface HTTPP2PResponse : NSObject <HTTPResponse>
 
 - (id)initWithP2PTask:(HTTPP2PTask*)task;
-- (NSString*)contentType;
 
 @end

@@ -17,6 +17,7 @@
 		2346967E17A4B2DA003A3D18 /* HTTPP2PTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 2346967A17A4B2DA003A3D18 /* HTTPP2PTask.m */; };
 		2346968317A4B315003A3D18 /* ehm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2346968217A4B315003A3D18 /* ehm.mm */; };
 		2346968917A4B41F003A3D18 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2346968817A4B41F003A3D18 /* NSData+MD5Digest.m */; };
+		2346969817A4B5C2003A3D18 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2346969717A4B5C2003A3D18 /* AVFoundation.framework */; };
 		23B59A3B17A4AF060097F132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B59A3A17A4AF060097F132 /* Foundation.framework */; };
 		23B59A4017A4AF060097F132 /* P2PPlayer4iOS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23B59A3F17A4AF060097F132 /* P2PPlayer4iOS.h */; };
 		23B59A4217A4AF060097F132 /* P2PPlayer4iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B59A4117A4AF060097F132 /* P2PPlayer4iOS.m */; };
@@ -70,6 +71,7 @@
 		2346968217A4B315003A3D18 /* ehm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ehm.mm; sourceTree = "<group>"; };
 		2346968717A4B41F003A3D18 /* NSData+MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5Digest.h"; sourceTree = "<group>"; };
 		2346968817A4B41F003A3D18 /* NSData+MD5Digest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5Digest.m"; sourceTree = "<group>"; };
+		2346969717A4B5C2003A3D18 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		23B59A3717A4AF060097F132 /* libP2PPlayer4iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libP2PPlayer4iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B59A3A17A4AF060097F132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23B59A3E17A4AF060097F132 /* P2PPlayer4iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2PPlayer4iOS-Prefix.pch"; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2346969817A4B5C2003A3D18 /* AVFoundation.framework in Frameworks */,
 				2346965917A4B09D003A3D18 /* libCocoaHTTPServer.a in Frameworks */,
 				2346956417A4AF67003A3D18 /* UIKit.framework in Frameworks */,
 				23B59A3B17A4AF060097F132 /* Foundation.framework in Frameworks */,
@@ -189,6 +192,7 @@
 		23B59A3917A4AF060097F132 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2346969717A4B5C2003A3D18 /* AVFoundation.framework */,
 				2346956317A4AF67003A3D18 /* UIKit.framework */,
 				23B59A3A17A4AF060097F132 /* Foundation.framework */,
 				234695EB17A4B059003A3D18 /* CocoaHTTPServer.xcodeproj */,

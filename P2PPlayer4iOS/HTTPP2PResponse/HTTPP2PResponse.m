@@ -29,11 +29,6 @@
 {
 }
 
-- (NSString*)contentType
-{
-    return [_task contentType];
-}
-
 #pragma mark HTTPResponse
 - (UInt64)contentLength
 {
@@ -63,6 +58,11 @@
 - (BOOL)isDone
 {
     return _offset >= [self contentLength];
+}
+
+- (NSDictionary *)httpHeaders
+{
+    return [NSDictionary dictionaryWithObject:[_task contentType] forKey:@"Content-Type"];
 }
 
 @end
