@@ -8,10 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		2346956417A4AF67003A3D18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2346956317A4AF67003A3D18 /* UIKit.framework */; };
+		2346965917A4B09D003A3D18 /* libCocoaHTTPServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 234695F017A4B05A003A3D18 /* libCocoaHTTPServer.a */; };
 		23B59A3B17A4AF060097F132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B59A3A17A4AF060097F132 /* Foundation.framework */; };
 		23B59A4017A4AF060097F132 /* P2PPlayer4iOS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 23B59A3F17A4AF060097F132 /* P2PPlayer4iOS.h */; };
 		23B59A4217A4AF060097F132 /* P2PPlayer4iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B59A4117A4AF060097F132 /* P2PPlayer4iOS.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		234695EF17A4B05A003A3D18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 234695EB17A4B059003A3D18 /* CocoaHTTPServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 234695DA17A4B059003A3D18;
+			remoteInfo = CocoaHTTPServer;
+		};
+		2346965717A4B099003A3D18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 234695EB17A4B059003A3D18 /* CocoaHTTPServer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 234695D917A4B059003A3D18;
+			remoteInfo = CocoaHTTPServer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		23B59A3517A4AF060097F132 /* CopyFiles */ = {
@@ -28,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		2346956317A4AF67003A3D18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		234695EB17A4B059003A3D18 /* CocoaHTTPServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CocoaHTTPServer.xcodeproj; path = CocoaHTTPServer/CocoaHTTPServer.xcodeproj; sourceTree = "<group>"; };
 		23B59A3717A4AF060097F132 /* libP2PPlayer4iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libP2PPlayer4iOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		23B59A3A17A4AF060097F132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23B59A3E17A4AF060097F132 /* P2PPlayer4iOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2PPlayer4iOS-Prefix.pch"; sourceTree = "<group>"; };
@@ -40,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2346965917A4B09D003A3D18 /* libCocoaHTTPServer.a in Frameworks */,
 				2346956417A4AF67003A3D18 /* UIKit.framework in Frameworks */,
 				23B59A3B17A4AF060097F132 /* Foundation.framework in Frameworks */,
 			);
@@ -48,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		234695EC17A4B059003A3D18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				234695F017A4B05A003A3D18 /* libCocoaHTTPServer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		23B59A2C17A4AF060097F132 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +98,7 @@
 			children = (
 				2346956317A4AF67003A3D18 /* UIKit.framework */,
 				23B59A3A17A4AF060097F132 /* Foundation.framework */,
+				234695EB17A4B059003A3D18 /* CocoaHTTPServer.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,6 +135,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2346965817A4B099003A3D18 /* PBXTargetDependency */,
 			);
 			name = P2PPlayer4iOS;
 			productName = P2PPlayer4iOS;
@@ -130,12 +160,28 @@
 			mainGroup = 23B59A2C17A4AF060097F132;
 			productRefGroup = 23B59A3817A4AF060097F132 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 234695EC17A4B059003A3D18 /* Products */;
+					ProjectRef = 234695EB17A4B059003A3D18 /* CocoaHTTPServer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				23B59A3617A4AF060097F132 /* P2PPlayer4iOS */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		234695F017A4B05A003A3D18 /* libCocoaHTTPServer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocoaHTTPServer.a;
+			remoteRef = 234695EF17A4B05A003A3D18 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		23B59A3317A4AF060097F132 /* Sources */ = {
@@ -147,6 +193,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2346965817A4B099003A3D18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaHTTPServer;
+			targetProxy = 2346965717A4B099003A3D18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		23B59A4317A4AF060097F132 /* Debug */ = {
