@@ -7,6 +7,7 @@
 //
 
 #import "HTTPP2PResponse.h"
+#import "ehm.h"
 
 @implementation HTTPP2PResponse
 {
@@ -19,6 +20,7 @@
     self = [super init];
     if (self)
     {
+        VPR(task);
         _task = task;
     }
     
@@ -62,6 +64,11 @@
 
 - (NSDictionary *)httpHeaders
 {
+    if (![_task contentType])
+    {
+        return nil;
+    }
+    
     return [NSDictionary dictionaryWithObject:[_task contentType] forKey:@"Content-Type"];
 }
 
