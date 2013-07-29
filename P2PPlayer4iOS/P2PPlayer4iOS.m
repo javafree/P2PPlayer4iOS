@@ -26,6 +26,8 @@
     BOOL _isBufferring;
     
     HTTPP2PTask *_task;
+    
+    id _timeObserver4player;
 }
 
 @synthesize delegate;
@@ -179,9 +181,10 @@
               options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
               context:nil];
     
-    [plyr addPeriodicTimeObserverForInterval:(CMTimeMakeWithSeconds(1, 1))
-                                       queue:(dispatch_get_main_queue())
-                                  usingBlock:^(CMTime time)
+    VBR(!_timeObserver4player);
+    _timeObserver4player = [plyr addPeriodicTimeObserverForInterval:(CMTimeMakeWithSeconds(1, 1))
+                                                              queue:(dispatch_get_main_queue())
+                                                         usingBlock:^(CMTime time)
     {
         [self.delegate playbackViewCore:self
                          newCurrentTime:CMTimeGetSeconds(time)];
@@ -303,6 +306,9 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [[self player] removeObserver:self forKeyPath:KEY_PATH_STATUS];
+    [[self player] removeTimeObserver:_timeObserver4player];
+    _timeObserver4player = nil;
+    
     [_item removeObserver:self forKeyPath:KEY_PATH_KEEPUP];
     [_item removeObserver:self forKeyPath:KEY_PATH_BUF_EMPTY];
     [_item removeObserver:self forKeyPath:KEY_PATH_LOADEDRANGE];
