@@ -217,7 +217,7 @@ ERROR:
     CPRA(cachesPath);
     
     taskParam.url = (char *)[_p2pUrl UTF8String];
-    taskParam.flag = eTaskParamCacheToFile;
+    taskParam.flag = eTaskParamSplitFile;   // eTaskParamSplitFile ==> read data from the file if it's there
     taskParam.path = (char*)[cachesPath UTF8String];
     taskParam.filename = (char*)[_md5Url UTF8String];
     
