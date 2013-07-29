@@ -41,13 +41,6 @@
         
         _md5Url = [[self class] key4url:_p2pUrl];
         VPR(_md5Url);
-        
-        _p2pTask = [self _handle4P2PUrl];
-        if (!_p2pTask)
-        {
-            VBR(0);
-            self = nil;
-        }
     }
     
     return self;
@@ -55,9 +48,6 @@
 
 - (void)dealloc
 {
-    p2pservice_task_destroy(_p2pTask);
-    _p2pTask = nil;
-    
     [self _cleanUp];
 }
 
@@ -76,7 +66,17 @@
 {
     VMAINTHREAD();
     
-    VPR(_p2pTask);
+    if (!_p2pTask)
+    {
+        _p2pTask = [self _handle4P2PUrl];
+    }
+    
+    if (!_p2pTask)
+    {
+        VBR(0);
+        return;
+    }
+
     p2pservice_task_start(_p2pTask);
     
     [self _waitUntilReady];
@@ -134,7 +134,7 @@
     while (1)
     {
         char *buf = [data mutableBytes];
-        int read = p2pservice_read(_p2pTask, offst, buf, length, false);
+        int read = p2pservice_read(_p2pTask, offst, buf, length, true); // must be true for player
         if (read > 0)
         {
             [data setLength:read];
@@ -167,7 +167,10 @@ ERROR:
 #pragma mark private
 - (void)_cleanUp
 {
+    p2pservice_set_playing(_p2pTask, false);
     p2pservice_task_stop(_p2pTask);
+    p2pservice_task_destroy(_p2pTask);
+    _p2pTask = nil;
 }
 
 - (BOOL)_waitUntilReady

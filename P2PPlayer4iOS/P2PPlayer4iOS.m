@@ -24,6 +24,8 @@
     
     BOOL _isPaused;
     BOOL _isBufferring;
+    
+    HTTPP2PTask *_task;
 }
 
 @synthesize delegate;
@@ -52,8 +54,8 @@
 {
     [self _cleanUp];
     
-    HTTPP2PTask *task = [HTTPP2PTask createTask4P2PUrl:p2pURL delegate:nil];
-    NSString *strURL = [HTTPP2PTask httpURL4task:task];
+    _task = [HTTPP2PTask createTask4P2PUrl:p2pURL delegate:nil];
+    NSString *strURL = [HTTPP2PTask httpURL4task:_task];
     
     _item = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:strURL]];
     AVPlayer *player = [AVPlayer playerWithPlayerItem:_item];
@@ -73,6 +75,11 @@
     _isBufferring = NO;
     
     [[self player] play];
+}
+
+- (void)stop
+{
+    [self _cleanUp];
 }
 
 - (void)pause
@@ -299,6 +306,12 @@
     [_item removeObserver:self forKeyPath:KEY_PATH_KEEPUP];
     [_item removeObserver:self forKeyPath:KEY_PATH_BUF_EMPTY];
     [_item removeObserver:self forKeyPath:KEY_PATH_LOADEDRANGE];
+    
+    _item = nil;
+    [self setPlayer:nil];
+    
+    [HTTPP2PTask stopP2PTask:_task];
+    _task = nil;
 }
 
 - (void)dealloc
