@@ -18,6 +18,7 @@
 		2346968317A4B315003A3D18 /* ehm.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2346968217A4B315003A3D18 /* ehm.mm */; };
 		2346968917A4B41F003A3D18 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2346968817A4B41F003A3D18 /* NSData+MD5Digest.m */; };
 		2346969817A4B5C2003A3D18 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2346969717A4B5C2003A3D18 /* AVFoundation.framework */; };
+		2377F1F617E019A000FF1825 /* UIDevice+IPAddr.m in Sources */ = {isa = PBXBuildFile; fileRef = 2377F1F517E019A000FF1825 /* UIDevice+IPAddr.m */; };
 		239EAB6817A4B8B8000C1B11 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 239EAB6717A4B8B8000C1B11 /* libstdc++.dylib */; };
 		239EAB8317A4BBA0000C1B11 /* HTTPConnection+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 239EAB8217A4BBA0000C1B11 /* HTTPConnection+Ext.m */; };
 		23B59A3B17A4AF060097F132 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B59A3A17A4AF060097F132 /* Foundation.framework */; };
@@ -74,6 +75,8 @@
 		2346968717A4B41F003A3D18 /* NSData+MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5Digest.h"; sourceTree = "<group>"; };
 		2346968817A4B41F003A3D18 /* NSData+MD5Digest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5Digest.m"; sourceTree = "<group>"; };
 		2346969717A4B5C2003A3D18 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2377F1F417E019A000FF1825 /* UIDevice+IPAddr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IPAddr.h"; sourceTree = "<group>"; };
+		2377F1F517E019A000FF1825 /* UIDevice+IPAddr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IPAddr.m"; sourceTree = "<group>"; };
 		239EAB6717A4B8B8000C1B11 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		239EAB8117A4BBA0000C1B11 /* HTTPConnection+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTTPConnection+Ext.h"; sourceTree = "<group>"; };
 		239EAB8217A4BBA0000C1B11 /* HTTPConnection+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HTTPConnection+Ext.m"; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 		2346967F17A4B315003A3D18 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2377F1F317E019A000FF1825 /* IP */,
 				2346968617A4B41F003A3D18 /* MD5 */,
 				2346968017A4B315003A3D18 /* ehm */,
 			);
@@ -177,6 +181,15 @@
 				2346968817A4B41F003A3D18 /* NSData+MD5Digest.m */,
 			);
 			path = MD5;
+			sourceTree = "<group>";
+		};
+		2377F1F317E019A000FF1825 /* IP */ = {
+			isa = PBXGroup;
+			children = (
+				2377F1F417E019A000FF1825 /* UIDevice+IPAddr.h */,
+				2377F1F517E019A000FF1825 /* UIDevice+IPAddr.m */,
+			);
+			path = IP;
 			sourceTree = "<group>";
 		};
 		23B59A2C17A4AF060097F132 = {
@@ -308,6 +321,7 @@
 				2346968317A4B315003A3D18 /* ehm.mm in Sources */,
 				2346968917A4B41F003A3D18 /* NSData+MD5Digest.m in Sources */,
 				239EAB8317A4BBA0000C1B11 /* HTTPConnection+Ext.m in Sources */,
+				2377F1F617E019A000FF1825 /* UIDevice+IPAddr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
